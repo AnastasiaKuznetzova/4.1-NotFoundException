@@ -40,12 +40,6 @@ class ProductRepositoryTest {
     @Test
     void shouldRemoveByNotExceptionId() {
 
-        try {
-            repository.removeById(5);
-        }
-        catch (NotFoundException e){
-           System.err.println(e);
-       }
         assertThrows(NotFoundException.class, () -> repository.removeById(1234));
     }
 }
